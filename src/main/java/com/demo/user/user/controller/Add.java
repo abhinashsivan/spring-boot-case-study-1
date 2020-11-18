@@ -21,6 +21,16 @@ public class Add {
     @GetMapping("/add")
     public String addOne(@RequestParam(required = true) int id, @RequestParam(required = true) String name, @RequestParam(required = true) String email) throws IOException {
 
+//        if(id_asString.isEmpty() || name.isEmpty()||email.isEmpty()){
+//            return "Kindly check your inputs";
+//        }
+
+        if(Integer.toString(id).isEmpty()|| name.isEmpty()||email.isEmpty()){
+            return "Kindly check your inputs";
+        }
+
+        //int id = Integer.parseInt(id_asString);
+
         User new_user = new User(id, name, email);
 
         Mapper mapper = new Mapper();
