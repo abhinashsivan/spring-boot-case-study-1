@@ -19,13 +19,10 @@ import java.io.IOException;
 public class Add {
 
     @GetMapping("/add")
-    public String addOne(@RequestParam(required = true) int id, @RequestParam(required = true) String name, @RequestParam(required = true) String email) throws IOException {
+    public String addOne(@RequestParam(required = true, defaultValue = "-1") int id, @RequestParam(required = true) String name, @RequestParam(required = true) String email) throws IOException {
 
-//        if(id_asString.isEmpty() || name.isEmpty()||email.isEmpty()){
-//            return "Kindly check your inputs";
-//        }
 
-        if(Integer.toString(id).isEmpty()|| name.isEmpty()||email.isEmpty()){
+        if(id==-1|| name.isBlank()||email.isBlank()){
             return "Kindly check your inputs";
         }
 
