@@ -27,12 +27,6 @@ public class GetAsList {
             InputStream inputStream = new FileInputStream(("src/main/resources/data.json"));
             TypeReference<List<User>> typeReference =  new TypeReference<List<User>>(){} ;
             users = mapper.readValue(inputStream, typeReference);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (JsonParseException e) {
-            e.printStackTrace();
-        } catch (JsonMappingException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

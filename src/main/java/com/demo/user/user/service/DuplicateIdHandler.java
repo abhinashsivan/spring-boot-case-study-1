@@ -2,12 +2,14 @@ package com.demo.user.user.service;
 
 import com.demo.user.user.domain.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.stereotype.Service;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
+@Service
 public class DuplicateIdHandler {
     public DuplicateIdHandler() {
     }
