@@ -1,13 +1,11 @@
 package com.demo.user.user.controller;
 
 import com.demo.user.user.domain.User;
-import com.demo.user.user.service.Mapper;
+import com.demo.user.user.service.ConvertObj;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,15 +20,13 @@ public class Add {
     public String addOne(@RequestParam(required = true, defaultValue = "-1") int id, @RequestParam(required = true) String name, @RequestParam(required = true) String email) throws IOException {
 
 
-        if(id==-1|| name.isBlank()||email.isBlank()){
+        if (id == -1 || name.isBlank() || email.isBlank()) {
             return "Kindly check your inputs";
         }
 
-        //int id = Integer.parseInt(id_asString);
-
         User new_user = new User(id, name, email);
 
-        Mapper mapper = new Mapper();
+        ConvertObj mapper = new ConvertObj();
 
         String JsonOB = mapper.toJsonOb(new_user);
 

@@ -4,13 +4,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 
-import java.io.Serializable;
-
-public class Mapper implements Serializable {
+public class ConvertObj {
 
     ObjectMapper mapper = new ObjectMapper();
 
-    public Mapper() {
+    public ConvertObj() {
     }
 
     public String toJsonOb(Object object) {
