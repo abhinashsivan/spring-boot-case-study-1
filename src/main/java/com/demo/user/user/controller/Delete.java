@@ -19,12 +19,12 @@ public class Delete {
 
     @GetMapping("/delete")
     @ResponseBody
-    public String delete(@RequestParam(defaultValue = "-1", required = true)int id) {
+    public String delete(@RequestParam(defaultValue = "-1", required = false)int id) {
 
         if(id == -1)
-            return "def id";
+            return "check your input !!";
 
-        List<User> userList = new ArrayList<User>();
+        List<User> userList ;
         ListIterator<User> litr = null;
         GetAsList tolist = new GetAsList();
 
@@ -34,17 +34,12 @@ public class Delete {
 
         litr = userList.listIterator();
 
-        System.out.println(userList.toString());
-//        int index=0;
-       while(litr.hasNext()) {
+        while(litr.hasNext()) {
             if (litr.next().getId() == id) {
-//                userList.remove(index);
                 litr.remove();
-                System.out.println("after deleting "+userList.toString());
                 successful = true;
 
             }
- //           index++;
         }
         try {
 
