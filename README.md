@@ -7,9 +7,7 @@ A simple Spring Boot Application with three endpoints.
 3. For viewing all Users.
 
 Class User
-- id
--name
--email
+- id, name, email
 
 -> The user details are stored in JSON format in a file. 
 -> If any input fields is empty, it should be considered as an error.
